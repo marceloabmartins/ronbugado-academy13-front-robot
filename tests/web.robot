@@ -71,7 +71,7 @@ Listar Departamento
 
 *** Keywords ***
 Abrir o navegador
-    Open Browser    ${URL}    ${BROWSER}    #options=add_argument("--headless")
+    Open Browser    ${URL}    ${BROWSER}    options=add_argument("--headless")
     #Maximize Browser Window
 
 Fechar Navegador
