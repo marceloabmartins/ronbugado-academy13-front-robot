@@ -43,11 +43,11 @@ jobs:
           log.html
   
   deploy:
-    name: Deploy GitHub Pages 🌐
+    name: Deploy GitHub Pages
     runs-on: ubuntu-latest
     if: always()
     needs: 
-      - test
+      - robot-tests
     permissions:
       contents: read
       pages: write
