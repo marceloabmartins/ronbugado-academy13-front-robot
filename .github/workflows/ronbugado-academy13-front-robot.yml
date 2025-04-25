@@ -41,3 +41,36 @@ jobs:
           output.xml
           report.html
           log.html
+  
+  deploy:
+    name: Deploy GitHub Pages 🌐
+    runs-on: ubuntu-latest
+    if: always()
+    needs: 
+      - test
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: https://github.com/marceloabmartins/ronbugado-academy13-front-robot/blob/main/results/report.html
+    steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with: 
+          name: report
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./
+
+      - name: Deploy to Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
