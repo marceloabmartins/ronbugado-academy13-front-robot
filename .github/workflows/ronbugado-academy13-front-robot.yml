@@ -31,7 +31,14 @@ jobs:
 
     - name: Run Robot Framework tests
       run: |
-        robot --output output.xml --report report.html --log log.html tests/
+        robot --output results/ .
+    
+    - name: Resultado dos testes
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: robot-framework-report
+        path: results
 
     - name: Upload Robot Framework reports
       uses: actions/upload-artifact@v4
@@ -54,7 +61,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: https://github.com/marceloabmartins/ronbugado-academy13-front-robot/blob/main/results/report.html
+      url: https://marceloabmartins.github.io/ronbugado-academy13-front-robot/results/report.html
     steps:
       - name: Setup Pages
         uses: actions/configure-pages@v5
