@@ -2,8 +2,8 @@
 ${BROWSER}    chrome
 #${BROWSER}    edge
 
-#${baseUrl}    https://develop.qacoders-academy.com.br/api/
-${URL}    https://automacao.qacoders-academy.com.br/login
+${baseUrl}    https://develop.qacoders-academy.com.br/api/
+#${URL}    https://automacao.qacoders-academy.com.br/login
 #${URL}    https://ron-bugado-front.qacoders.dev.br/login
 
 
